@@ -1,3 +1,9 @@
+import CategoryList from "@/components/CategoryList";
+
 export default function Home() {
-  return <main>main</main>;
+  return (
+    <main>
+      <CategoryList />
+    </main>
+  );
 }
