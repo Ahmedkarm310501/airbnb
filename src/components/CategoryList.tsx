@@ -15,7 +15,7 @@ import { FaSkiing } from "react-icons/fa";
 import { BsSnow } from "react-icons/bs";
 import { IoDiamond } from "react-icons/io5";
 import { MdOutlineVilla } from "react-icons/md";
-import { BsArrowLeftCircle, BsArrowRightCircle } from "react-icons/bs";
+import { MdKeyboardArrowLeft, MdKeyboardArrowRight } from "react-icons/md";
 import CategoryBox from "./CategoryBox";
 
 export const categories = [
@@ -115,9 +115,9 @@ const CategoryList = (props: Props) => {
 
   return (
     <div className="flex items-center">
-      <BsArrowLeftCircle
-        className=" cursor-pointer"
-        iconStyle={{ width: "30px", height: "30px" }}
+      <MdKeyboardArrowLeft
+        className=" cursor-pointer flex-shrink-0 border border-black rounded-full"
+        size={30}
         onClick={scrollLeft}
       />
       <div
@@ -134,9 +134,9 @@ const CategoryList = (props: Props) => {
           );
         })}
       </div>
-      <BsArrowRightCircle
-        className="cursor-pointer"
-        iconStyle={{ minWidth: "60px", minHeight: "60px" }}
+      <MdKeyboardArrowRight
+        className="cursor-pointer flex-shrink-0 border border-black rounded-full"
+        size={30}
         onClick={scrollRight}
       />
     </div>
