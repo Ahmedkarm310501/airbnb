@@ -9,12 +9,12 @@ const UserMenu = () => {
   const [showMenu, setShowMenu] = useState(false);
   const ref = useClickOutside(() => setShowMenu(false));
   return (
-    <div className="flex items-center">
-      <div className="flex items-center font-semibold mr-3">
-        <span className="rounded-full hover:bg-slate-50 px-2 py-3">
+    <div className="hidden md:flex items-center ">
+      <div className="flex items-center font-semibold md:justify-end">
+        <span className="rounded-full hover:bg-slate-50 px-2 py-3 sm:text-xs md:text-base hidden sm:block">
           Airbnb your home
         </span>
-        <span className="mx-4 rounded-full hover:bg-slate-50 px-3 py-3">
+        <span className="mx-2 rounded-full hover:bg-slate-50 px-3 py-3 sm:px-2">
           <TbWorld className="text-lg text-gray-700" />
         </span>
       </div>

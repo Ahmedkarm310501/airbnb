@@ -7,7 +7,7 @@ type Props = {};
 
 const NavBar = (props: Props) => {
   return (
-    <nav className="border-b-[1px] flex px-10 py-4 justify-between">
+    <nav className="border-b-[1px] flex px-6 md:px-8 lg:px-10 py-4 md:justify-between items-center">
       <Logo />
       <SearchMenu />
       <UserMenu />
