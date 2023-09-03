@@ -11,6 +11,9 @@ const config: Config = {
       colors: {
         main: "#FF5A5F",
       },
+      boxShadow: {
+        bottom: "0 6px 5px -5px rgb(0 0 0 / 16%);",
+      },
     },
   },
   plugins: [],

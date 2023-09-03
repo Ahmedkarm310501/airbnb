@@ -1,5 +1,5 @@
 "use client";
-import React, { useRef } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { TbBeach, TbMountain, TbPool } from "react-icons/tb";
 import {
   GiBarn,
@@ -100,28 +100,39 @@ type Props = {};
 
 const CategoryList = (props: Props) => {
   const listRef = useRef<HTMLDivElement | null>(null);
+  const [isScrolled, setIsScrolled] = useState(false);
 
   const scrollLeft = () => {
     if (listRef.current) {
       listRef.current.scrollLeft -= 100; // Adjust the scroll amount as needed
     }
   };
-
   const scrollRight = () => {
     if (listRef.current) {
       listRef.current.scrollLeft += 100; // Adjust the scroll amount as needed
     }
   };
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 0);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, [isScrolled]);
 
   return (
-    <div className="flex items-center">
+    <div className={`flex items-center ${isScrolled ? "shadow-bottom" : ""}`}>
       <MdKeyboardArrowLeft
         className=" cursor-pointer flex-shrink-0 border border-black rounded-full"
         size={30}
         onClick={scrollLeft}
       />
       <div
-        className="flex gap-2 p-3 justify-between mt-4 overflow-x-scroll no-scrollbar drop-shadow-2xl flex-grow scroll-smooth"
+        className="flex gap-2 p-3 justify-between mt-2 md:mt-4 overflow-x-scroll no-scrollbar drop-shadow-2xl flex-grow scroll-smooth"
         ref={listRef}
       >
         {categories.map((category) => {

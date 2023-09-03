@@ -9,7 +9,7 @@ const UserMenu = () => {
   const [showMenu, setShowMenu] = useState(false);
   const ref = useClickOutside(() => setShowMenu(false));
   return (
-    <div className="hidden md:flex items-center ">
+    <div className="hidden md:flex items-center z-50 bg-white ">
       <div className="flex items-center font-semibold md:justify-end">
         <span className="rounded-full hover:bg-slate-50 px-2 py-3 sm:text-xs md:text-base hidden sm:block">
           Airbnb your home
@@ -28,7 +28,7 @@ const UserMenu = () => {
         </button>
         {showMenu && (
           <div
-            className="absolute min-w-[240px] right-0 top-12 bg-white"
+            className="absolute min-w-[240px] right-0 top-12 bg-white rounded-2xl"
             ref={ref}
           >
             <div className="felx flex-col  shadow-2xl rounded-2xl py-2">
