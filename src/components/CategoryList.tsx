@@ -17,6 +17,7 @@ import { IoDiamond } from "react-icons/io5";
 import { MdOutlineVilla } from "react-icons/md";
 import { MdKeyboardArrowLeft, MdKeyboardArrowRight } from "react-icons/md";
 import CategoryBox from "./CategoryBox";
+import { usePathname } from "next/navigation";
 
 export const categories = [
   {
@@ -96,22 +97,17 @@ export const categories = [
   },
 ];
 
-type Props = {};
+type Props = {
+  pClasses?: string;
+};
 
-const CategoryList = (props: Props) => {
+const CategoryList = ({ pClasses }: Props) => {
   const listRef = useRef<HTMLDivElement | null>(null);
   const [isScrolled, setIsScrolled] = useState(false);
 
-  const scrollLeft = () => {
-    if (listRef.current) {
-      listRef.current.scrollLeft -= 100; // Adjust the scroll amount as needed
-    }
-  };
-  const scrollRight = () => {
-    if (listRef.current) {
-      listRef.current.scrollLeft += 100; // Adjust the scroll amount as needed
-    }
-  };
+  //get current url
+  const pathName = usePathname();
+
   useEffect(() => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 0);
@@ -123,9 +119,28 @@ const CategoryList = (props: Props) => {
       window.removeEventListener("scroll", handleScroll);
     };
   }, [isScrolled]);
+  // if url not equal / then return null
+  if (pathName !== "/") {
+    return null;
+  }
+
+  const scrollLeft = () => {
+    if (listRef.current) {
+      listRef.current.scrollLeft -= 100; // Adjust the scroll amount as needed
+    }
+  };
+  const scrollRight = () => {
+    if (listRef.current) {
+      listRef.current.scrollLeft += 100; // Adjust the scroll amount as needed
+    }
+  };
 
   return (
-    <div className={`flex items-center ${isScrolled ? "shadow-bottom" : ""}`}>
+    <div
+      className={`flex items-center ${pClasses} ${
+        isScrolled ? "shadow-bottom" : ""
+      } `}
+    >
       <MdKeyboardArrowLeft
         className=" cursor-pointer flex-shrink-0 border border-black rounded-full"
         size={30}

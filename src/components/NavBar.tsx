@@ -1,20 +1,27 @@
+"use client";
 import React from "react";
 import Logo from "./Logo";
 import SearchMenu from "./SearchMenu";
 import UserMenu from "./UserMenu";
 import CategoryList from "./CategoryList";
 
-type Props = {};
+type Props = {
+  pClasses: string;
+};
 
-const NavBar = (props: Props) => {
+const NavBar = ({ pClasses }: Props) => {
   return (
-    <header className="sticky top-0 z-10 bg-white px-6 md:px-8 lg:px-10 ">
-      <nav className="md:border-b-[1px] flex py-2 md:py-4 md:justify-between items-center ">
-        <Logo />
-        <SearchMenu />
-        <UserMenu />
-      </nav>
-      <CategoryList />
+    <header className={`sticky top-0 z-10 bg-white  `}>
+      <div className="md:border-b-[1px]">
+        <nav
+          className={`flex py-2 md:py-4 md:justify-between items-center ${pClasses}`}
+        >
+          <Logo />
+          <SearchMenu />
+          <UserMenu />
+        </nav>
+      </div>
+      <CategoryList pClasses={pClasses} />
     </header>
   );
 };
