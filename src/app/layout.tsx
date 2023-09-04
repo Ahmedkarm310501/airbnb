@@ -2,6 +2,9 @@ import NavBar from "@/components/NavBar";
 import "./globals.css";
 import type { Metadata } from "next";
 import MobileNav from "@/components/MobileNav";
+import RegisterModal from "@/components/modals/RegisterModal";
+import LoginModal from "@/components/modals/LoginModal";
+import RentModal from "@/components/modals/RentModal";
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -17,6 +20,9 @@ export default function RootLayout({
     <html lang="en">
       <body>
         <NavBar />
+        <RegisterModal />
+        <LoginModal />
+        <RentModal />
 
         <div className="px-6 md:px-8 lg:px-10">{children}</div>
         <MobileNav />

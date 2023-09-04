@@ -4,14 +4,23 @@ import { FiMenu } from "react-icons/fi";
 import { TbWorld } from "react-icons/tb";
 import { FaUserCircle } from "react-icons/fa";
 import useClickOutside from "@/hooks/useClickOutside";
+import useRegisterModal from "@/hooks/useRegisterModal";
+import useLoginModal from "@/hooks/useLoginModal";
+import useRentModal from "@/hooks/useRentModal";
 
 const UserMenu = () => {
   const [showMenu, setShowMenu] = useState(false);
   const ref = useClickOutside(() => setShowMenu(false));
+  const { onOpen: openRegisterModel } = useRegisterModal();
+  const { onOpen: openLoginModel } = useLoginModal();
+  const { onOpen: openRentModel } = useRentModal();
   return (
     <div className="hidden md:flex items-center z-50 bg-white ">
       <div className="flex items-center font-semibold md:justify-end">
-        <span className="rounded-full hover:bg-slate-50 px-2 py-3 sm:text-xs md:text-base hidden sm:block">
+        <span
+          className="rounded-full hover:bg-slate-50 px-2 py-3 sm:text-xs md:text-base hidden sm:block cursor-pointer"
+          onClick={openRentModel}
+        >
           Airbnb your home
         </span>
         <span className="mx-2 rounded-full hover:bg-slate-50 px-3 py-3 sm:px-2">
@@ -32,10 +41,16 @@ const UserMenu = () => {
             ref={ref}
           >
             <div className="felx flex-col  shadow-2xl rounded-2xl py-2">
-              <p className="px-3 py-2 hover:bg-gray-100 cursor-pointer ">
+              <p
+                className="px-3 py-2 hover:bg-gray-100 cursor-pointer "
+                onClick={openLoginModel}
+              >
                 login
               </p>
-              <p className="px-3 py-2 hover:bg-gray-100 cursor-pointer">
+              <p
+                className="px-3 py-2 hover:bg-gray-100 cursor-pointer"
+                onClick={openRegisterModel}
+              >
                 Signup
               </p>
               <span className="border-b-[1px] w-full inline-block"></span>

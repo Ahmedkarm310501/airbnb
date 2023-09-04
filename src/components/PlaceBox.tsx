@@ -2,14 +2,16 @@ import React from "react";
 import Image from "next/image";
 import { AiFillStar, AiFillHeart } from "react-icons/ai";
 
-type Props = {};
+type Props = {
+  imageSrc: string;
+};
 
-const PlaceBox = (props: Props) => {
+const PlaceBox = ({ imageSrc }: Props) => {
   return (
     <div className="flex flex-col gap-3 cursor-pointer">
       <div className="flex justify-between items-center h-full w-full relative">
         <img
-          src="/images/1.webp"
+          src={imageSrc}
           alt=""
           className="rounded-xl object-cover aspect-square"
         />

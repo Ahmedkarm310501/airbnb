@@ -5,26 +5,29 @@ import { PiUserCircleLight } from "react-icons/pi";
 import { GrFavorite } from "react-icons/gr";
 const MobileNav = () => {
   const [isNavVisible, setIsNavVisible] = useState(true);
-  const [prevScrollPos, setPrevScrollPos] = useState(window.scrollY);
 
-  useEffect(() => {
-    const handleScroll = () => {
-      const currentScrollPos = window.scrollY;
-      const scrollingUp = prevScrollPos > currentScrollPos;
+  // TODO: Fix this remove this
 
-      // Determine whether to show or hide the navigation based on scroll direction
-      setIsNavVisible(scrollingUp || currentScrollPos < 10); // Show when scrolling up or near the top
+  // const [prevScrollPos, setPrevScrollPos] = useState(window.scrollY);
 
-      setPrevScrollPos(currentScrollPos);
-    };
+  // useEffect(() => {
+  //   const handleScroll = () => {
+  //     const currentScrollPos = window.scrollY;
+  //     const scrollingUp = prevScrollPos > currentScrollPos;
 
-    window.addEventListener("scroll", handleScroll);
+  //     // Determine whether to show or hide the navigation based on scroll direction
+  //     setIsNavVisible(scrollingUp || currentScrollPos < 10); // Show when scrolling up or near the top
 
-    return () => {
-      // Clean up the event listener on component unmount
-      window.removeEventListener("scroll", handleScroll);
-    };
-  }, [prevScrollPos]);
+  //     setPrevScrollPos(currentScrollPos);
+  //   };
+
+  //   window.addEventListener("scroll", handleScroll);
+
+  //   return () => {
+  //     // Clean up the event listener on component unmount
+  //     window.removeEventListener("scroll", handleScroll);
+  //   };
+  // }, [prevScrollPos]);
 
   return (
     <nav className={`z-30 `}>
