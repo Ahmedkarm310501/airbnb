@@ -17,10 +17,7 @@ const PlaceBox = ({ imageSrc }: Props) => {
             className="rounded-xl object-cover aspect-square"
           />
           <div className="absolute top-3 right-3 cursor-pointer">
-            <AiFillHeart
-              className="text-2xl fill-gray-600 stroke-white stroke-[40]"
-              stroke
-            />
+            <AiFillHeart className="text-2xl fill-gray-600 stroke-white stroke-[40]" />
           </div>
         </div>
         <div className="flex flex-col gap-1 leading-tight">

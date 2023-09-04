@@ -13,7 +13,7 @@ const config: Config = {
         main: "#FF5A5F",
       },
       boxShadow: {
-        bottom: "0 6px 5px -5px rgb(0 0 0 / 16%);",
+        bottom: "0 6px 5px -5px rgba(0, 0, 0, 0.16)",
       },
     },
   },

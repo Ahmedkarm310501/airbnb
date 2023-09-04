@@ -18,7 +18,6 @@ const PlaceHeader = (props: Props) => {
           className="w-full h-full object-cover col-span-2 row-span-2"
           width={500}
           height={500}
-          objectFit="cover"
         />
         <Image
           src="/images/place1.2.webp"
@@ -26,7 +25,6 @@ const PlaceHeader = (props: Props) => {
           className="w-full h-full object-cover"
           width={500}
           height={500}
-          objectFit="cover"
         />
         <Image
           src="/images/place1.3.webp"
@@ -34,7 +32,6 @@ const PlaceHeader = (props: Props) => {
           className="w-full h-full object-cover"
           width={500}
           height={500}
-          objectFit="cover"
         />
         <Image
           src="/images/place1.4.webp"
@@ -42,7 +39,6 @@ const PlaceHeader = (props: Props) => {
           className="w-full h-full object-cover"
           width={500}
           height={500}
-          objectFit="cover"
         />
         <Image
           src="/images/place1.5.webp"
@@ -50,7 +46,6 @@ const PlaceHeader = (props: Props) => {
           className="w-full h-full object-cover"
           width={500}
           height={500}
-          objectFit="cover"
         />
       </div>
     </div>

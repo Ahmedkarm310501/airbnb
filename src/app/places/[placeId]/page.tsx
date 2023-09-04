@@ -13,7 +13,7 @@ const initialDateRange = {
 
 type Props = {};
 
-const page = (props: Props) => {
+const Page = (props: Props) => {
   const [dateRange, setDateRange] = useState<Range>(initialDateRange);
   const [isLoading, setIsLoading] = useState(false);
 
@@ -50,4 +50,4 @@ const page = (props: Props) => {
   );
 };
 
-export default page;
+export default Page;
