@@ -1,4 +1,3 @@
-"use client";
 import PlaceBox from "@/components/PlaceBox";
 
 export default function Home() {
