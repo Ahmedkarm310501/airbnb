@@ -7,6 +7,7 @@ import useClickOutside from "@/hooks/useClickOutside";
 import useRegisterModal from "@/hooks/useRegisterModal";
 import useLoginModal from "@/hooks/useLoginModal";
 import useRentModal from "@/hooks/useRentModal";
+import Link from "next/link";
 
 const UserMenu = () => {
   const [showMenu, setShowMenu] = useState(false);
@@ -43,22 +44,34 @@ const UserMenu = () => {
             <div className="felx flex-col  shadow-2xl rounded-2xl py-2">
               <p
                 className="px-3 py-2 hover:bg-gray-100 cursor-pointer "
-                onClick={openLoginModel}
+                onClick={() => {
+                  openLoginModel();
+                  setShowMenu(false);
+                }}
               >
                 login
               </p>
               <p
                 className="px-3 py-2 hover:bg-gray-100 cursor-pointer"
-                onClick={openRegisterModel}
+                onClick={() => {
+                  openRegisterModel();
+                  setShowMenu(false);
+                }}
               >
                 Signup
               </p>
               <span className="border-b-[1px] w-full inline-block"></span>
-              <p className="px-3 py-2 hover:bg-gray-100 cursor-pointer">
-                Profile
+              <p
+                className="px-3 py-2 hover:bg-gray-100 cursor-pointer"
+                onClick={() => setShowMenu(false)}
+              >
+                <Link href="/favorites">Favorites</Link>
               </p>
-              <p className="px-3 py-2 hover:bg-gray-100 cursor-pointer">
-                Places
+              <p
+                className="px-3 py-2 hover:bg-gray-100 cursor-pointer"
+                onClick={() => setShowMenu(false)}
+              >
+                <Link href="/bookings">Bookings</Link>
               </p>
             </div>
           </div>
